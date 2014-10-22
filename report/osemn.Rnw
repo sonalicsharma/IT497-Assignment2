@@ -107,7 +107,7 @@ cleanData
   \label{table:cleanData}
 \end{table}
 Table~\ref{table:cleanData} shows the total schools, students and teachers in Chicago,IL
-It has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.\\
+It has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contains the total number of teachers teaching in the schools from 2001 to 2011.\\
 The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identifies the dataset's subject.
 The three variables- school, student and teacher are plotted against year (X-axis) in a line graph using the ggplot2 package.
 
@@ -135,8 +135,8 @@ graph
 Figure~\ref{fig:graph} shows a line graph of total schools, students and teachers
 in Chicago, IL\newpage
 
-The graph has three different colored lines. The red, green and blue colored lines are of the school, student and teacher variable, respectively. The X-axis shows the year from December,2001 through December, 2011. The Y-axis shows the total number or count.
-\\ The total number of schools in 2001 was 573. It has some rise and fall in the total number. Finally, it became 620 in the year 2011.
+The graph has three different colored lines. The red, green and blue colored lines represent the school, student and teacher variable, respectively. The X-axis shows the year from December,2001 through December, 2011. The Y-axis shows the total number or count.
+\\ The total number of schools was 573 in 2001. It fluctuated over the observed 10 years and became 620 in 2011.
 \\ The total number of students in 2001 was around 429,684, which decreased to around 399,013 in 2008. It again increased in 2009 to around 420,193 and finally decreased to 400,383 in 2011.
 \\ The total number of teachers in 2001 was 23,012, which reached its highest peak of around 24,659 in 2006. Later it decreased to around 18,715 in 2007. It again increased to around 22,589 in 2010 and finally fell to around 21,847 in 2011.
 \end{document}
