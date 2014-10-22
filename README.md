@@ -14,5 +14,5 @@ The report directory contains figure directory, where all figures consisting of 
 It also contains source code file named osemn.Rnw. The RNW file type is primarily associated with 'Sweave'. Sweave is a tool that allows to embed the R code for complete data analyses in latex documents. 
 It is the output generated file named **osemn.pdf**. It contains all the codes, outputs, table and graph knitted together in a pdf format file                           
 
-The report directory has also some files like osemn. log, .Rhistory, osemn.synctex.gz, osemn.tex  and osemn-concordance.tex which are formed during compiling and help to generate the output pdf.
+The report directory has also some files like osemn. log, .Rhistory, osemn.synctex.gz, osemn.tex  and osemn-concordance.tex which are formed during compilation and help to generate the output pdf.
 
