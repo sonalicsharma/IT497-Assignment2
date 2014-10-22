@@ -31,7 +31,7 @@ It could be also access through the URL
 The data are stored in myData object and it will be used for further analysis.
 
 <<chunk1>>=
-# Chunk1 shows the code for downloading the dataset from a 
+# Chunk1 shows the codes for downloading the dataset from a 
 # secure URL using Quandl API and Auth token.
 
 # Loading knitr and Quandl
@@ -48,7 +48,7 @@ Scrubbing and cleaning of the data are done to get only the relevant data needed
 
 
 <<chunk2>>=
-# Chunk2 shows the code for extracting the relevant rows 
+# Chunk2 shows the codes for extracting the relevant rows 
 # and columns.
 # Cleaning the data needed to plot a graph showing the total 
 # students, total teachers and total schools in Chicago, 
@@ -59,7 +59,7 @@ The columns' name is also changed for convenience and readability. The cleaned d
 
 
 <<chunk3>>=
-# Chunk3 shows the code for changing the columns' name and 
+# Chunk3 shows the codes for changing the columns' name and 
 # displaying the data.
 # Changing the columns' name
 colnames(cleanData) <- c("year", "school", "student", 
@@ -105,7 +105,7 @@ cleanData
 Table1 has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.
 
 <<chunk8, figure=TRUE>>=
-# Chunk8 has the code for melting the dataset and plotting 
+# Chunk8 has the codes for melting the dataset and plotting 
 # the line graph.
 # Melting the data
 library(reshape2)
@@ -117,7 +117,7 @@ ggplot(moltenData, aes(as.Date(year,"%e %b %Y"),value))+
     geom_line(aes(color = variable))+
     geom_point()  + xlab("Year") + ylab("Total Number")+
     labs(title = "Total schools, total students and total 
-    teachers")+theme_bw() 
+    teachers in Chicago,IL")+theme_bw() 
 
 # Figure shows a line graph showing the total schools, total 
 # students and total teachers from 2001 to 2011.
