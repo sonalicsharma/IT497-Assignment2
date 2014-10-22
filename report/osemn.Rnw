@@ -81,7 +81,7 @@ The function class prints the vector of names of classes an object inherits from
 # function.
 str(cleanData, width=60, strict.width="wrap")
 @
-The function str compactly displays the internal structure of an R object, a diagnostic function and an alternative to summary. Here, the year is in the date format. The school, student and teacher are in the number data type.
+The function str compactly displays the internal structure of an R object, a diagnostic function and an alternative to summary. Here, the year is in the date format. The school, student and teacher are in the numeric data type.
 
 <<chunk6>>=
 # Chunk6 has the code for printing the output of the summary
