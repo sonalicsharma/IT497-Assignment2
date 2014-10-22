@@ -19,7 +19,7 @@ Schools in the United States comprise of both public as well as private schools.
 \\ The data are collected for schools in Chicago, IL from the database of the National Center for Education Statistics. The database stores the data for the number of schools, students, and teachers in regular schools with membership for the 100 largest cities in the United States, by school operational and charter status and state for school years ending 2001 through 2011. 
 
 \section {Data}
-The data is collected for examining the total numbers of schools, teachers and students in Chicago, IL over the period of 10 years, from December, 2011 to December, 2011. The required data is retrieved from the Quandl API. Libraries like knitr, ggplot2 and reshape2 are used.
+The data is collected for examining the total numbers of schools, teachers and students in Chicago, IL over the period of 10 years, from December, 2001 to December, 2011. The required data is retrieved from the Quandl API. Libraries like knitr, ggplot2 and reshape2 are used.
 
 \begin{enumerate}
     \item \textbf{Obtaining the data}
