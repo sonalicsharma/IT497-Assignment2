@@ -52,56 +52,71 @@
 \begin{document}
 
 
-\title { IT497 OSEMN Assignment} 
+\title {United States School Statistics: Chicago, Illinois
+\\ IT497 OSEMN Assignment}
 \author { Sonali Changkakoti
 \\ School of Information Technology 
 \\ Illinois State University
 \\
 \texttt{schangk@ilstu.edu}}
 \date{\today} 
-\maketitle{\textit{United States School Statistics (100 Largest Cities): Chicago, Illinois}}
+\maketitle
 
 
 \section{Introduction}
-Schools in the United States comprise of both public as well as private schools. Public schools are available universally. The funding and control of public schools are done by state, local and federal government. Their curricula and staffing are decided by the locally elected school boards. On the other hand, private schools are generally free to determine their own curricula and staffing policies. There are also charter schools, which receive public funding but operate independently. Some states do not have charter school authorization. Around 88\% of school-aged students attend public schools, 9\% attend private schools and rest 3\% are homeschooled. 
-\\Education in the United States is compulsory over an age range, which varies from state to state. Formal education is divided into a number of stages. Children may begin with pre-kindergarten, kindergarten or first grade. The compulsory education is till 12th grade, after that students can pursue higher education in colleges or universities. Schools are divided into three groups- elementary school, middle or junior high school and high school. The American school year traditionally begins at the end of August, after a summer recess. 
+Schools in the United States comprise of both public as well as private schools. The funding and control of public schools are done by state, local and federal government. Their curricula and staffing are decided by the locally elected school boards. On the other hand, private schools are generally free to determine their own curricula and staffing policies. There are also charter schools, which receive public funding but operate independently. Some states do not have charter school authorization. Around 88\% of school-aged students attend public schools, 9\% attend private schools and rest 3\% are homeschooled. 
+\\Education in the United States is compulsory over an age range, which varies from state to state.  Formal education is divided into a number of stages. Schools are divided into three groups- elementary school, middle or junior high school and high school. The elementary school are from kindergarten to fifth grade, middle school are from 6th grade to 8th grade and high school are from 9th grade to 12th grade.Children may begin with pre-kindergarten, kindergarten or first grade. The compulsory education is till 12th grade, after that students can pursue higher education in colleges or universities.  
 \\The data are collected from the National Center for Education Statistics for the number of schools, students, and teachers in regular schools with membership for the 100 largest cities in the United States, by school operational and charter status and state for school years ending 2001 through 2011. Here, the data from Chicago, IL among the 100 largest cities in the United States has been chosen for analysis.
 
 
 \section {Data}
-We have to collect data for examining the total numbers of schools, teachers and schools in Chicago, IL over the period of 10 years, from December, 2011 to December, 2011. We will get the required data from the Quandl API. We will be using various libraries available in R like RCurl, ggplot2 and reshape2.
+The data is collected for examining the total numbers of schools, teachers and schools in Chicago, IL over the period of 10 years, from December, 2011 to December, 2011. The required data is reteived from the Quandl API. Libraries like knitr, ggplot2 and reshape2 are used.
 
 \begin{enumerate}
-    \item Obtaing the data.
+    \item Obtaing the data
 
-There are many ways to download data into R. We will be using RCurl. It is a laborious but a good way to download data from a secure URL using getURL command in the RCurl package. We will also use read.csv and textConnection command, which are available in base R.
-
+The dataset is downloaded by using the Quandl API and auth token in a csv format.
+It can be also access through the URL 
+\\\verb@(https//www.quandl.com/NCES/SCHOOLS_CITIES_CHICAGOILLINOIS)@
+The data is stored in myData object and it will be used for further analysis.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Loading RCurl}
+\hlcom{# Loading knitr and Quandl}
 \hlkwd{library}\hlstd{(knitr)}
 \hlkwd{library}\hlstd{(Quandl)}
 
-\hlcom{# To download data from a secure URL using RCurl}
+\hlcom{# To download data from a secure URL using Quandl API }
+\hlcom{# and authcode}
 
 \hlstd{myData} \hlkwb{<-} \hlkwd{Quandl}\hlstd{(}\hlstr{"NCES/SCHOOLS_CITIES_CHICAGOILLINOIS"}\hlstd{,}
                  \hlkwc{authcode}\hlstd{=}\hlstr{"sUMBj-Lb7MRzwnUWXvxe"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
-\item Cleaning data 
+\item Scrubing data (Cleaning data)
  
-Cleaning data is the most time taking job. We will scrub and clean our data to get only the relevant data needed to obtain the results. Irrelevant data makes the analyis difficult. By scanning the data, we came to know that we only need column 1 through column 4. Therefore, we will choose and store all rows containing only these columns in new variable called cleanData. For further analysis, we will be using cleanData variable only. We will also change the colunms' name for convenience.
+Scrubing and cleaning of the data is done to get only the relevant data needed to obtain the results. Irrelevant data make the analyis difficult. Relevant data can be obtained by just looking into it and determining the requirements of the report. All the rows containing column 1 through column 4 are chosen and stored in a new object named cleanData.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Filtering the data needed to plot a graph showing total }
-\hlcom{#students, total teachers and total schools in Chicago, Illinois}
+\hlcom{# Cleaning the data needed to plot a graph showing total }
+\hlcom{# students, total teachers and total schools in Chicago, }
+\hlcom{# Illinois}
 \hlstd{cleanData}\hlkwb{<-}\hlstd{myData[,}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{]}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+The columns' name are also changed for convenience and readability. The cleaned data is shown as below:
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
 \hlcom{# Changing the columns' name}
-\hlkwd{colnames}\hlstd{(cleanData)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"year"}\hlstd{,} \hlstr{"schools"}\hlstd{,} \hlstr{"students"}\hlstd{,} \hlstr{"teachers"}\hlstd{)}
+\hlkwd{colnames}\hlstd{(cleanData)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"year"}\hlstd{,} \hlstr{"schools"}\hlstd{,} \hlstr{"students"}\hlstd{,}
+                         \hlstr{"teachers"}\hlstd{)}
 \hlcom{# Showing the contents of cleanData}
 \hlstd{cleanData}
 \end{alltt}
@@ -123,22 +138,26 @@ Cleaning data is the most time taking job. We will scrub and clean our data to g
 \end{knitrout}
 \item Explore data
 
-We will explore the data by using three commands - class(), str(), summary().
+The data is explored by using three functions - class(), str(), summary().
 The function class prints the vector of names of classes an object inherits from.
-The function str compactly displays the internal structure of an R object, a diagonistic function and an   alternative to summary.
-And the summary is a generic function to produce result summaries of the results of various model functions.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Class}
+\hlcom{# Class function}
 \hlkwd{class}\hlstd{(cleanData)}
 \end{alltt}
 \begin{verbatim}
 ## [1] "data.frame"
 \end{verbatim}
+\end{kframe}
+\end{knitrout}
+The function str compactly displays the internal structure of an R object, a diagonistic function and an   alternative to summary.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Str}
+\hlcom{# Str function}
 \hlkwd{str}\hlstd{(cleanData)}
 \end{alltt}
 \begin{verbatim}
@@ -148,8 +167,14 @@ And the summary is a generic function to produce result summaries of the results
 ##  $ students: num  400383 402951 420193 399013 408311 ...
 ##  $ teachers: num  21847 22589 21062 19674 18715 ...
 \end{verbatim}
+\end{kframe}
+\end{knitrout}
+And the summary is a generic function to produce result summaries of the results of various model functions. It is especially helpful for seeing basic descriptive statistics for all of the variables in a data frame and also the variables’ types.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Summary}
+\hlcom{# Summary function}
 \hlkwd{summary}\hlstd{(cleanData)}
 \end{alltt}
 \begin{verbatim}
@@ -170,24 +195,28 @@ And the summary is a generic function to produce result summaries of the results
 
 \section {Result}
 
-We will plot a line graph from the data using the ggplot2 package. For doing this, first we have to melt to data using the melt command in the reshape2 package.
+The three variables- schools, students and teachers are plotted against year (X-axis) in a line graph from the data obtained using the ggplot2 package. The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identify the dataset's subject.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Melting the data}
-\hlkwd{library}\hlstd{(ggplot2)}
 \hlkwd{library}\hlstd{(reshape2)}
 \hlstd{moltenData} \hlkwb{<-} \hlkwd{melt}\hlstd{(cleanData,}\hlkwc{id.vars}\hlstd{=}\hlstr{"year"}\hlstd{)}
+\hlcom{# Plotting the grapg using ggplot2}
+\hlkwd{library}\hlstd{(ggplot2)}
 \hlkwd{ggplot}\hlstd{(moltenData,} \hlkwd{aes}\hlstd{(}\hlkwd{as.Date}\hlstd{(year,}\hlstr{"%e %b %Y"}\hlstd{),value))}\hlopt{+}
-  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{= variable))}\hlopt{+}
-   \hlkwd{geom_point}\hlstd{()}  \hlopt{+} \hlkwd{xlab}\hlstd{(}\hlstr{"Year"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Graph"}\hlstd{)}\hlopt{+} \hlkwd{theme_bw}\hlstd{()}
+    \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{= variable))}\hlopt{+}
+    \hlkwd{geom_point}\hlstd{()}  \hlopt{+} \hlkwd{xlab}\hlstd{(}\hlstr{"Year"}\hlstd{)} \hlopt{+} \hlkwd{ylab}\hlstd{(}\hlstr{"Total Number"}\hlstd{)}\hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Total schools, total students and total 
+    teachers"}\hlstd{)}\hlopt{+}\hlkwd{theme_bw}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/chunk3-1} 
+\includegraphics[width=\maxwidth]{figure/chunk7-1} 
 
 \end{knitrout}
  
-The graph is havong three lines showing
+The graph has three different colored lines. The red,green and blue colored lines are of school, students and teachers variable, respectively. The total number of schools in 2001 was 573. It has some rise and fall in the total number. Finally, it became 620 in the year 2011.
+\\The total number of students in 2001 was around 429,684, which decreased to around 399,013 in 2008. It again increased in 2009 to around 420,193 and finally decreased to 400,383 in 2011.
+\\The total number of teachers in 2001 was 23,012, which reached its highest peak of around 24,659 in 2006. Later it decreased to around 18,715 in 2007. It again increased to around 22,589 in 2010 and finally fell to around 21,847 in 2011.
 \end{document}
