@@ -51,7 +51,6 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-
 \title {\textbf{United States School Statistics: Chicago, Illinois}
 \\ IT497 OSEMN Assignment}
 \author { Sonali Changkakoti
@@ -77,7 +76,7 @@ The data is collected for examining the total numbers of schools, teachers and s
 The dataset is downloaded in a csv format by using the Quandl API and Auth token.
 It could be also access through the URL 
 \\\verb@(https//www.quandl.com/NCES/SCHOOLS_CITIES_CHICAGOILLINOIS).@
-The data are stored in myData object and it will be used for further analysis.
+\\ The data are stored in myData object and it will be used for further analysis.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -141,6 +140,7 @@ The data are explored by using three functions - class(), str(), summary().
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
+
 The function class prints the vector of names of classes an object inherits from. The class of the dataset is data.frame.
 
 \begin{knitrout}
@@ -185,9 +185,9 @@ The summary is a generic function to produce result summaries of the results of 
 \end {enumerate}
 
 \section {Result}
-
 The results of the report are shown by displaying the table and graph:
 
+\begin{table}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -211,8 +211,17 @@ The results of the report are shown by displaying the table and graph:
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-Table1 has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.
 
+    \caption{Showing the total schools, students and teachers in Chicago,IL}
+  \label{table:cleanData}
+\end{table}
+Table~\ref{table:cleanData} shows the total schools, students and teachers in Chicago,IL
+It has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.\\
+The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identifies the dataset's subject.
+The three variables- school, student and teacher are plotted against year (X-axis) in a line graph using the ggplot2 package.
+
+\begin{figure}
+  \centering
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -224,23 +233,21 @@ Table1 has four columns namely- year, school, student and teacher. The year vari
 
 \hlcom{# Plotting the graph using ggplot2}
 \hlkwd{library}\hlstd{(ggplot2)}
-\hlkwd{ggplot}\hlstd{(moltenData,} \hlkwd{aes}\hlstd{(}\hlkwd{as.Date}\hlstd{(year,}\hlstr{"%e %b %Y"}\hlstd{),value))}\hlopt{+}
+\hlstd{graph}\hlkwb{<-}\hlkwd{ggplot}\hlstd{(moltenData,} \hlkwd{aes}\hlstd{(}\hlkwd{as.Date}\hlstd{(year,}\hlstr{"%e %b %Y"}\hlstd{),value))}\hlopt{+}
     \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{= variable))}\hlopt{+}
     \hlkwd{geom_point}\hlstd{()}  \hlopt{+} \hlkwd{xlab}\hlstd{(}\hlstr{"Year"}\hlstd{)} \hlopt{+} \hlkwd{ylab}\hlstd{(}\hlstr{"Total Number"}\hlstd{)}\hlopt{+}
-    \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Total schools, total students and total 
-    teachers"}\hlstd{)}\hlopt{+}\hlkwd{theme_bw}\hlstd{()}
+    \hlkwd{theme_bw}\hlstd{()}
+\hlstd{graph}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/chunk8-1} 
-\begin{kframe}\begin{alltt}
-\hlcom{# Figure shows a line graph showing the total schools, total }
-\hlcom{# students and total teachers from 2001 to 2011.}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
 
-\\ The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identifies the dataset's subject.
-The three variables- school, student and teacher are plotted against year (X-axis) in a line graph using the ggplot2 package.\\
+\end{knitrout}
+\caption{A line graph showing the total schools, students and teachers in Chicago,IL}
+  \label{fig:graph}
+\end{figure}
+Figure~\ref{fig:graph} shows a line graph of total schools, students and teachers
+in Chicago, IL\newpage
 
 The graph has three different colored lines. The red, green and blue colored lines are of the school, student and teacher variable, respectively. The X-axis shows the year from December,2001 through December, 2011. The Y-axis shows the total number or count.
 \\ The total number of schools in 2001 was 573. It has some rise and fall in the total number. Finally, it became 620 in the year 2011.

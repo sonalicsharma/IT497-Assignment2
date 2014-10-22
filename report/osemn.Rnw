@@ -2,7 +2,6 @@
 
 \begin{document}
 
-
 \title {\textbf{United States School Statistics: Chicago, Illinois}
 \\ IT497 OSEMN Assignment}
 \author { Sonali Changkakoti
@@ -28,10 +27,10 @@ The data is collected for examining the total numbers of schools, teachers and s
 The dataset is downloaded in a csv format by using the Quandl API and Auth token.
 It could be also access through the URL 
 \\\verb@(https//www.quandl.com/NCES/SCHOOLS_CITIES_CHICAGOILLINOIS).@
-The data are stored in myData object and it will be used for further analysis.
+\\ The data are stored in myData object and it will be used for further analysis.
 
 <<chunk1>>=
-# Chunk1 shows the codes for downloading the dataset from a 
+# Chunk1 shows the code for downloading the dataset from a 
 # secure URL using Quandl API and Auth token.
 
 # Loading knitr and Quandl
@@ -48,7 +47,7 @@ Scrubbing and cleaning of the data are done to get only the relevant data needed
 
 
 <<chunk2>>=
-# Chunk2 shows the codes for extracting the relevant rows 
+# Chunk2 shows the code for extracting the relevant rows 
 # and columns.
 # Cleaning the data needed to plot a graph showing the total 
 # students, total teachers and total schools in Chicago, 
@@ -59,7 +58,7 @@ The columns' name is also changed for convenience and readability. The cleaned d
 
 
 <<chunk3>>=
-# Chunk3 shows the codes for changing the columns' name and 
+# Chunk3 shows the code for changing the columns' name and 
 # displaying the data.
 # Changing the columns' name
 colnames(cleanData) <- c("year", "school", "student", 
@@ -74,6 +73,7 @@ The data are explored by using three functions - class(), str(), summary().
 # function.
 class(cleanData)
 @
+
 The function class prints the vector of names of classes an object inherits from. The class of the dataset is data.frame.
 
 <<chunk5>>=
@@ -94,18 +94,27 @@ The summary is a generic function to produce result summaries of the results of 
 \end {enumerate}
 
 \section {Result}
+The results of the report are shown by displaying the table and graph.
 
-The results of the report are shown by displaying the table and graph:
-
+\begin{table}
 <<chunk7>>=
 # Chunk 7 has the code for showing the dataset in table format.
 # Showing the contents of the cleanData.
 cleanData
 @
-Table1 has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.
 
+    \caption{Showing the total schools, students and teachers in Chicago,IL}
+  \label{table:cleanData}
+\end{table}
+Table~\ref{table:cleanData} shows the total schools, students and teachers in Chicago,IL
+It has four columns namely- year, school, student and teacher. The year variable contains the year stating from 2001 through 2011. The school variable contains the total number of schools over 10 years. The student variable has total number of students studying over these years and the teacher variable contain the total number of teachers teaching in the schools from 2001 to 2011.\\
+The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identifies the dataset's subject.
+The three variables- school, student and teacher are plotted against year (X-axis) in a line graph using the ggplot2 package.
+
+\begin{figure}
+  \centering
 <<chunk8, figure=TRUE>>=
-# Chunk8 has the codes for melting the dataset and plotting 
+# Chunk8 has the code for melting the dataset and plotting 
 # the line graph.
 # Melting the data
 library(reshape2)
@@ -113,18 +122,18 @@ moltenData <- melt(cleanData,id.vars="year")
 
 # Plotting the graph using ggplot2
 library(ggplot2)
-ggplot(moltenData, aes(as.Date(year,"%e %b %Y"),value))+ 
+graph<-ggplot(moltenData, aes(as.Date(year,"%e %b %Y"),value))+ 
     geom_line(aes(color = variable))+
     geom_point()  + xlab("Year") + ylab("Total Number")+
-    labs(title = "Total schools, total students and total 
-    teachers in Chicago,IL")+theme_bw() 
+    theme_bw() 
+graph
 
-# Figure shows a line graph showing the total schools, total 
-# students and total teachers from 2001 to 2011.
 @
-
-\\ The melt command is used to reshape the data from wide to long format. The year variable is not melted as it identifies the dataset's subject.
-The three variables- school, student and teacher are plotted against year (X-axis) in a line graph using the ggplot2 package.\\
+\caption{A line graph showing the total schools, students and teachers in Chicago,IL}
+  \label{fig:graph}
+\end{figure}
+Figure~\ref{fig:graph} shows a line graph of total schools, students and teachers
+in Chicago, IL\newpage
 
 The graph has three different colored lines. The red, green and blue colored lines are of the school, student and teacher variable, respectively. The X-axis shows the year from December,2001 through December, 2011. The Y-axis shows the total number or count.
 \\ The total number of schools in 2001 was 573. It has some rise and fall in the total number. Finally, it became 620 in the year 2011.
