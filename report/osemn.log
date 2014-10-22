@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.29)  22 OCT 2014 02:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.29)  22 OCT 2014 11:55
 entering extended mode
 **osemn.tex
 (C:\Users\Sonali\Documents\GitHub\IT497-Assignment2\report\osemn.tex
@@ -122,105 +122,131 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {C:/Users/Sonali/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (14.44174pt too wide) in paragraph at lines 77--81
+[]\OT1/cmtt/m/n/10 (https//www.quandl.com/NCES/SCHOOLS_CITIES_CHICAGOILLINOIS).
+ \OT1/cmr/m/n/10 The
+ []
+
 Package color Info: Redefining color shadecolor on input line 83.
-
-Overfull \hbox (9.19069pt too wide) in paragraph at lines 78--83
-[]\OT1/cmtt/m/n/10 (https//www.quandl.com/NCES/SCHOOLS_CITIES_CHICAGOILLINOIS) 
-\OT1/cmr/m/n/10 The
- []
-
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 86.
-Package color Info: Redefining color shadecolor on input line 102.
-Package color Info: Redefining color shadecolor on input line 115.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 89.
+Package color Info: Redefining color shadecolor on input line 103.
+
+Overfull \hbox (1.98335pt too wide) in paragraph at lines 107--107
+[][]\OT1/cmtt/m/it/10 # Cleaning the data needed to plot a graph showing the to
+tal [][] 
+ []
+
+Package color Info: Redefining color shadecolor on input line 118.
 [2]
-Package color Info: Redefining color shadecolor on input line 145.
-Package color Info: Redefining color shadecolor on input line 158.
+Package color Info: Redefining color shadecolor on input line 133.
+Package color Info: Redefining color shadecolor on input line 147.
 
-Overfull \hbox (15.9971pt too wide) in paragraph at lines 169--169
-[]\OT1/cmtt/m/n/10 ##  $ schools : num  620 614 610 600 597 600 588 588 581 574
- ...[] 
+Overfull \hbox (0.24724pt too wide) in paragraph at lines 159--159
+[]\OT1/cmtt/m/n/10 ## $ school : num 620 614 610 600 597 600 588 588 581 574 ..
+.[] 
  []
 
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-Package color Info: Redefining color shadecolor on input line 175.
+Package color Info: Redefining color shadecolor on input line 165.
 
-Overfull \hbox (42.24687pt too wide) in paragraph at lines 188--188
-[]\OT1/cmtt/m/n/10 ##       year               schools         students        
- teachers[] 
+Overfull \hbox (36.99692pt too wide) in paragraph at lines 179--179
+[]\OT1/cmtt/m/n/10 ##       year                school         student         
+ teacher[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  Min.   :2001-12-31   Min.   :573.0   Min.   :399013   Mi
 n.   :18715[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  1st Qu.:2004-07-01   1st Qu.:584.5   1st Qu.:405631   1s
 t Qu.:21162[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  Median :2006-12-31   Median :597.0   Median :420193   Me
 dian :22419[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  Mean   :2006-12-31   Mean   :595.0   Mean   :417213   Me
 an   :21958[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  3rd Qu.:2009-07-01   3rd Qu.:605.0   3rd Qu.:428953   3r
 d Qu.:22944[] 
  []
 
 
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 188--188
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 179--179
 []\OT1/cmtt/m/n/10 ##  Max.   :2011-12-31   Max.   :620.0   Max.   :432478   Ma
 x.   :24659[] 
  []
 
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
 [3]
-Package color Info: Redefining color shadecolor on input line 201.
- <figure/chunk7-1.pdf, id=18, 505.89pt x 505.89pt>
-File: figure/chunk7-1.pdf Graphic file (type pdf)
+Package color Info: Redefining color shadecolor on input line 192.
+Package color Info: Redefining color shadecolor on input line 217.
+ <figure/chunk8-1.pdf, id=19, 505.89pt x 505.89pt>
+File: figure/chunk8-1.pdf Graphic file (type pdf)
 
-<use figure/chunk7-1.pdf>
-Package pdftex.def Info: figure/chunk7-1.pdf used on input line 215.
+<use figure/chunk8-1.pdf>
+Package pdftex.def Info: figure/chunk8-1.pdf used on input line 234.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 215--216
+Overfull \hbox (15.0pt too wide) in paragraph at lines 234--235
 [][] 
  []
 
-[4 <C:/Users/Sonali/Documents/GitHub/IT497-Assignment2/report/figure/chunk7-1.p
-df>] [5] (C:\Users\Sonali\Documents\GitHub\IT497-Assignment2\report\osemn.aux) 
+[4]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 \\ T
+          he melt command is used to reshape the data from wide to long form...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
+
+ []
+
+[5 <C:/Users/Sonali/Documents/GitHub/IT497-Assignment2/report/figure/chunk8-1.p
+df>] [6] (C:\Users\Sonali\Documents\GitHub\IT497-Assignment2\report\osemn.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 1278 strings out of 493921
- 16572 string characters out of 3152893
- 73078 words of memory out of 3000000
- 4593 multiletter control sequences out of 15000+200000
- 7785 words of font info for 29 fonts, out of 3000000 for 9000
+ 1281 strings out of 493921
+ 16611 string characters out of 3152893
+ 72078 words of memory out of 3000000
+ 4595 multiletter control sequences out of 15000+200000
+ 8400 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,6n,19p,633b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/git/MikTex/fonts/
-type1/public/amsfonts/cm/cmitt10.pfb><D:/git/MikTex/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/git/M
-ikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/git/MikTex/fonts/type1/publi
-c/amsfonts/cm/cmtt10.pfb><D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb>
-Output written on osemn.pdf (5 pages, 111942 bytes).
+ 27i,6n,19p,633b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/git/MikTex/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><D:/git/MikTex/fonts/type1/public/amsfonts/
+cm/cmitt10.pfb><D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/git/
+MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/git/MikTex/fonts/type1/publ
+ic/amsfonts/cm/cmr17.pfb><D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb><D:/git/MikTex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on osemn.pdf (6 pages, 129549 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
