@@ -4,7 +4,7 @@ IT497-Assignment2
 TT497-Assignment2 repository has two directories- data and report.
 
 1) Data directory
-=================
+-------------------
 The dataset obtained from Quandl API about the total number od schools, students and teachers from December, 2001 through December, 2011 in Chicago,IL is stored in the school.csv file. This csv file has been used for the analysis in this report.
 
 2) Report directory
